@@ -6,7 +6,7 @@
 
 	<insert id="write">
 		insert into
-			k_board.tbl_board(title, content, writer)
+			tbl_board(title, content, writer)
 				values(#{title}, #{content}, #{writer})
 	</insert>
 
