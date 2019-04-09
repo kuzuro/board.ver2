@@ -1,0 +1,23 @@
+# 데이터 베이스 생성
+create database k_board;
+
+# 계정 생성
+create user 'kuzuro'@'localhost' identified by '1111';
+
+# 데이터 베이스에 대한 권한 설정
+grant all privileges on k_board.* to 'kuzuro'@'localhost';
+
+# ----------------------------------------------------------
+
+# 게시판 테이블
+create table tbl_board (
+	bno		int			not null  auto_increment,
+	title		varchar(50)	not null,
+	content	text			not null,
+	writer	varchar(30)	not null,
+	regDate	timestamp	default now(),
+	viewCnt	int			default 0,
+	primary key(bno)
+);
+
+# ----------------------------------------------------------
