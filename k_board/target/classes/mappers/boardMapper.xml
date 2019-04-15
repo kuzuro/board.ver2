@@ -12,7 +12,7 @@
 	</insert>
 	
 	<!-- 게시물 수정 -->
-	<update id="modify" parameterType="com.kboard.domain.BoardVO">
+	<update id="update" parameterType="com.kboard.domain.BoardVO">
 		update 
 			tbl_board
 				set
