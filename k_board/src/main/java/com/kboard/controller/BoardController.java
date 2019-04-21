@@ -6,8 +6,10 @@ import javax.inject.Inject;
 
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
+import org.springframework.web.bind.annotation.RequestHeader;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.RequestParam;
 
 import com.kboard.domain.BoardVO;
 import com.kboard.service.BoardService;
@@ -46,7 +48,7 @@ public class BoardController {
 	
 	// 게시물 조회
 	@RequestMapping(value = "/view", method = RequestMethod.GET)
-	public void getView(int bno, Model model) throws Exception {
+	public void getView(@RequestParam("bno") int bno, Model model) throws Exception {
 	 
 		BoardVO view = null;
 		view =  service.view(bno);
