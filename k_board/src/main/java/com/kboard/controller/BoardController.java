@@ -72,5 +72,23 @@ public class BoardController {
 		
 		return "redirect:/board/list";	
 	}
+	
+	// 게시물 삭제
+	@RequestMapping(value = "/delete", method = RequestMethod.GET)
+	public void getDelete(@RequestParam("bno") int bno, Model model) throws Exception {
+		BoardVO view = null;
+		view =  service.view(bno);
+		
+		model.addAttribute("view", view);	
+	}	
+	
+	// 게시물 삭제
+	@RequestMapping(value = "/delete", method = RequestMethod.POST)
+	public String postDelete(BoardVO vo) throws Exception {
+	
+		service.delete(vo.getBno());
+		
+		return "redirect:/board/list";	
+	}
 
 }

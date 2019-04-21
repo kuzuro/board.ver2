@@ -30,7 +30,8 @@
 		</div>
 		
 		<div>
-			<a href="/board/update?bno=${view.bno}">수정</a>
+			<a href="/board/update?bno=${view.bno}">수정</a><br />
+			<a href="/board/delete?bno=${view.bno}">삭제</a>
 		</div>
 		
 	</form>
