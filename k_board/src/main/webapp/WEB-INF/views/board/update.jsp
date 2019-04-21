@@ -19,11 +19,14 @@
 		</div>
 
 		<div>
-			<label>작성자</label> ${view.writer}
+			<label>작성자</label> <input type="text" name="writer" value="${view.writer}" readonly="readonly" />
 		</div>
 
 		<div>
-			<label>작성날짜</label> <fmt:formatDate value="${view.regDate}" pattern="yyyy-MM-dd" />
+			<label>작성날짜</label> <fmt:formatDate value="${view.regDate}" pattern="yyyy-MM-dd" /> 
+			
+			<%-- <input type="text" name="regDate"
+					value="<fmt:formatDate value="${view.regDate}" pattern="yyyy-MM-dd" />" readonly="readonly" /> --%>
 		</div>
 		
 		<div>

@@ -19,7 +19,7 @@ public class BoardController {
 	
 	@Inject
 	BoardService service;
-	
+		
 	// 게시물 목록
 	@RequestMapping(value = "/list", method = RequestMethod.GET)
 	public void list(Model model) throws Exception {
