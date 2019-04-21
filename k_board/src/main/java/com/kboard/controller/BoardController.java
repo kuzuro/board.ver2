@@ -19,14 +19,31 @@ public class BoardController {
 	@Inject
 	BoardService service;
 	
+	// 게시물 목록
 	@RequestMapping(value = "/list", method = RequestMethod.GET)
 	public void list(Model model) throws Exception {
 		
 		List<BoardVO> list = null;
 		list = service.list();
 		
-		model.addAttribute("list", list);
+		model.addAttribute("list", list);	
+	}
+	
+	// 게시물 작성
+	@RequestMapping(value = "/write", method = RequestMethod.GET)
+	public void getWrite() throws Exception {
+	
+	}
+	
+	// 게시물 작성
+	@RequestMapping(value = "/write", method = RequestMethod.POST)
+	public String postWrite(BoardVO vo) throws Exception {
+	
+		service.write(vo);
+		
+		return "redirect:/board/list";
 		
 	}
+	
 	
 }
