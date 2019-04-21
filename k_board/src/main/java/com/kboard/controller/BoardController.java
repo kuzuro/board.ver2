@@ -6,7 +6,6 @@ import javax.inject.Inject;
 
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
-import org.springframework.web.bind.annotation.RequestHeader;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
@@ -56,5 +55,22 @@ public class BoardController {
 		model.addAttribute("view", view);	
 	}	
 	
+	// 게시물 수정
+	@RequestMapping(value = "/update", method = RequestMethod.GET)
+	public void getUpdate(@RequestParam("bno") int bno, Model model) throws Exception {
+		BoardVO view = null;
+		view =  service.view(bno);
+		
+		model.addAttribute("view", view);	
+	}	
 	
+	// 게시물 수정
+	@RequestMapping(value = "/update", method = RequestMethod.POST)
+	public String postUpdate(BoardVO vo) throws Exception {
+	
+		service.update(vo);
+		
+		return "redirect:/board/list";	
+	}
+
 }

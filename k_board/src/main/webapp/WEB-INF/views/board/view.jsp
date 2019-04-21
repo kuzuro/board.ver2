@@ -28,6 +28,11 @@
 			<label>내용</label>
 			<textarea rows="5" cols="50" name="content" readonly="readonly">${view.content}</textarea>
 		</div>
+		
+		<div>
+			<a href="/board/update?bno=${view.bno}">수정</a>
+		</div>
+		
 	</form>
 
 </body>
