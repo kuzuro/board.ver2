@@ -41,9 +41,18 @@ public class BoardController {
 	
 		service.write(vo);
 		
-		return "redirect:/board/list";
-		
+		return "redirect:/board/list";	
 	}
+	
+	// 게시물 조회
+	@RequestMapping(value = "/view", method = RequestMethod.GET)
+	public void getView(int bno, Model model) throws Exception {
+	 
+		BoardVO view = null;
+		view =  service.view(bno);
+		
+		model.addAttribute("view", view);	
+	}	
 	
 	
 }
