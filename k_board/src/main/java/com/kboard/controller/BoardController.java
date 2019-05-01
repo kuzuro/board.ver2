@@ -1,11 +1,17 @@
 package com.kboard.controller;
 
+import java.text.DateFormat;
+import java.text.SimpleDateFormat;
+import java.util.Date;
 import java.util.List;
 
 import javax.inject.Inject;
 
+import org.springframework.beans.propertyeditors.CustomDateEditor;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
+import org.springframework.web.bind.WebDataBinder;
+import org.springframework.web.bind.annotation.InitBinder;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
@@ -19,7 +25,14 @@ public class BoardController {
 	
 	@Inject
 	BoardService service;
-		
+	
+	// 날짜 타입 데이터 변환
+	@InitBinder
+	protected void initBinder(WebDataBinder wdb) {
+		DateFormat dateFormat = new SimpleDateFormat("yyyy-MM-dd");
+		wdb.registerCustomEditor(Date.class, new CustomDateEditor(dateFormat, true));
+	}
+			
 	// 게시물 목록
 	@RequestMapping(value = "/list", method = RequestMethod.GET)
 	public void list(Model model) throws Exception {

@@ -23,10 +23,11 @@
 		</div>
 
 		<div>
-			<label>작성날짜</label> <fmt:formatDate value="${view.regDate}" pattern="yyyy-MM-dd" /> 
+			<label>작성날짜</label> 
+			<%-- <fmt:formatDate value="${view.regDate}" pattern="yyyy-MM-dd" />  --%>
 			
-			<%-- <input type="text" name="regDate"
-					value="<fmt:formatDate value="${view.regDate}" pattern="yyyy-MM-dd" />" readonly="readonly" /> --%>
+			<input type="text" name="regDate"
+					value="<fmt:formatDate value="${view.regDate}" pattern="yyyy-MM-dd" />" readonly="readonly" />
 		</div>
 		
 		<div>
