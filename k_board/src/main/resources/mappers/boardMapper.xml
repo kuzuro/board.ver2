@@ -45,5 +45,24 @@
 			bno, title, content, writer, regDate, viewCnt 
 				from tbl_board
 	</select>
+	
+	
+	<!-- 게시물 총 갯수 구하기 -->
+	<select id="count" resultType="int">
+		select
+			count(bno)
+		from
+			tbl_board
+	</select>
+	
+	<!-- 페이징 1 -->
+	<select id="listPage" parameterType="hashMap" resultType="com.kboard.domain.BoardVO">
+		select
+			bno, title, content, writer, regDate, viewCnt
+		from 
+			tbl_board
+		limit #{displayPost}, #{postNum}
+	</select>
+	
 
 </mapper>

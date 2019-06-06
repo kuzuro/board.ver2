@@ -1,5 +1,6 @@
 package com.kboard.dao;
 
+import java.util.HashMap;
 import java.util.List;
 
 import javax.inject.Inject;
@@ -47,4 +48,22 @@ public class BoardDAOImpl implements BoardDAO {
 		return sql.selectList(namespace + ".list");
 	}
 
-}
+	// 게시물 총 갯수
+	@Override
+	public int count() throws Exception {
+		return sql.selectOne(namespace + ".count");
+	}
+
+	// 페이징 1
+	@Override
+	public List<BoardVO> listPage(int displayPost, int postNum) throws Exception {
+		
+		HashMap<String, Integer> myMap = new HashMap<String, Integer>();
+		
+		myMap.put("displayPost", displayPost);
+		myMap.put("postNum", postNum);
+						
+		return sql.selectList(namespace + ".listPage", myMap);
+	}
+
+} 

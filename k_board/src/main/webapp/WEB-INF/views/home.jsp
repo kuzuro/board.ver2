@@ -17,7 +17,10 @@
 
 <p>
 	<a href="/board/list">게시물 목록</a><br />
-	<a href="/board/write">게시물 작성</a>
+	<a href="/board/write">게시물 작성</a><br />
+	-<br />
+	<a href="/board/listPage?num=1">게시물 목록 - 페이지 1</a><br />
+	
 </p>
 
 </body>

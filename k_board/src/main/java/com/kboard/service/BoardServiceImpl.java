@@ -44,4 +44,17 @@ public class BoardServiceImpl implements BoardService {
 		return dao.list();
 	}
 
+	// 게시물 총 갯수
+	@Override
+	public int count() throws Exception {
+		return dao.count();
+	}
+
+	// 페이징 1
+	@Override
+	public List<BoardVO> listPage(int displayPost, int postNum) throws Exception {
+		return dao.listPage(displayPost, postNum);
+	}
+
 }
+ 
