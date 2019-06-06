@@ -107,9 +107,7 @@ public class BoardController {
 	// 게시물 목록 - 페이징 구현
 	@RequestMapping(value = "/listPage", method = RequestMethod.GET)
 	public void listPage(Model model, int num) throws Exception {
-		
-		System.out.println("num = " + num);
-		
+				
 		// 게시물 총 갯수
 		int count = service.count();
 		
